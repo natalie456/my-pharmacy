@@ -1,35 +1,69 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Аптека "Здоров'я"</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Аптека "Здоров'я"</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <header>
-    <div class="logo">Аптека "Здоров'я"</div>
-    <nav>
-        <ul>
-            <li><a href="index.html">Головна</a></li>
-            <li><a href="products.html">Товари</a></li>
-            <li><a href="contacts.html">Контакти</a></li>
-        </ul>
-    </nav>
+  <div class="logo">Аптека "Здоров'я"</div>
+  <nav>
+    <ul>
+      <li><a href="index.html">Головна</a></li>
+      <li><a href="products.html">Товари</a></li>
+      <li><a href="contacts.html">Контакти</a></li>
+    </ul>
+  </nav>
+ 
+  <button id="open-cart">🛒 Кошик (<span id="cart-count">0</span>)</button>
 </header>
 
 <main>
-    <section class="hero">
-        <h1>Ласкаво просимо до аптеки "Здоров'я"</h1>
-        <p>Якісні ліки та доступні ціни</p>
-        <a href="products.html" class="btn">Переглянути товари</a>
-    </section>
+  <section class="hero">
+    <h1>Ласкаво просимо до аптеки "Здоров'я"</h1>
+    <p>Якісні ліки та доступні ціни</p>
+    <a href="products.html" class="btn">Переглянути товари</a>
+  </section>
+
+ 
+  <section class="product-grid">
+    <div class="product">
+      <h2>Парацетамол</h2>
+      <p>Ціна: 50 грн</p>
+      <button onclick="addToCart('Парацетамол', 50)">Додати</button>
+    </div>
+    <div class="product">
+      <h2>Ібупрофен</h2>
+      <p>Ціна: 70 грн</p>
+      <button onclick="addToCart('Ібупрофен', 70)">Додати</button>
+    </div>
+    <div class="product">
+      <h2>Но-шпа</h2>
+      <p>Ціна: 60 грн</p>
+      <button onclick="addToCart('Но-шпа', 60)">Додати</button>
+    </div>
+  </section>
 </main>
 
+
+<div id="cart-modal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeCart()">&times;</span>
+    <h2>Ваш кошик</h2>
+    <div id="cart-items"></div>
+    <p><strong>Сума:</strong> <span id="total">0</span> грн</p>
+  </div>
+</div>
+
 <footer>
-    <p>© 2024 Аптека "Здоров'я". Всі права захищені.</p>
+  <p>© 2024 Аптека "Здоров'я". Всі права захищені.</p>
 </footer>
 
+
+<script src="script.js"></script>
 </body>
 </html>
+
